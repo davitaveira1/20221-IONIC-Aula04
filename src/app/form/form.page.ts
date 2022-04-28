@@ -27,6 +27,7 @@ export class FormPage implements OnInit {
         //this.router.navigate(['/listar-produtos']);
         //this.mensagemSalvar('Produto adicionado com sucesso!');
         console.log("Dados adicionados")
+        this.nome="";
 
       });
 

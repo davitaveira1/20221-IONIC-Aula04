@@ -6,7 +6,8 @@ import 'rxjs/add/operator/map';
 
 export class Post{
 
-    server : string = "http://localhost/producao/app-2704/api/";
+    server : string = "http://localhost/apps/producao/20221/app-2704/api/";
+    //server : string = "http://localhost/app-2704/api/";
 
     constructor(private http:HttpClient){
 
