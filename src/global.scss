@@ -24,3 +24,12 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+.padding-start{
+    --padding-start: 0px;
+}
+
+.padding{
+    padding-left: 20px;
+    padding-right: 20px;
+}

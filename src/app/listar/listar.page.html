@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>listar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list *ngFor="let dadosEmpresas of empresas">
+
+    <ion-item class="padding padding-start">
+      <ion-label>{{dadosEmpresas.nome}}</ion-label>
+    </ion-item>
+
+  </ion-list>
+
+</ion-content>
