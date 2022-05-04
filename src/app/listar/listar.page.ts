@@ -1,6 +1,5 @@
 import { Post } from 'src/services/post';
 import { Component, OnInit } from '@angular/core';
-import { promises } from 'fs';
 
 @Component({
   selector: 'app-listar',
@@ -40,7 +39,7 @@ export class ListarPage implements OnInit {
 
       });
 
-    });  
+    })
 
   }
 

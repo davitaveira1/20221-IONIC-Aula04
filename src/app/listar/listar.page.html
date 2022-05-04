@@ -6,12 +6,25 @@
 
 <ion-content>
 
-  <ion-list *ngFor="let dadosEmpresas of empresas">
+  <!-- <ion-list *ngFor="let dadosEmpresas of empresas">
 
     <ion-item class="padding padding-start">
       <ion-label>{{dadosEmpresas.nome}}</ion-label>
     </ion-item>
 
+  </ion-list> -->
+
+  <ion-list *ngFor="let dadosEmpresas of empresas">
+    <ion-item>
+      <ion-avatar slot="start">
+        <img src="./avatar-finn.png" />
+      </ion-avatar>
+      <ion-label>
+        <h2>{{dadosEmpresas.nome}}</h2>
+        <h3>I'm a big deal</h3>
+        <p>Listen, I've had a pretty messed up day...</p>
+      </ion-label>
+    </ion-item>
   </ion-list>
 
 </ion-content>
