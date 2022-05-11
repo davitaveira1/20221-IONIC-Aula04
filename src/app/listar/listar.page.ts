@@ -1,5 +1,6 @@
 import { Post } from 'src/services/post';
 import { Component, OnInit } from '@angular/core';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-listar',
@@ -11,7 +12,7 @@ export class ListarPage implements OnInit {
   empresas : any = [];
   nomeEmpresa : string ="";
 
-  constructor(private post : Post) { }
+  constructor(private post : Post, private toast : ToastController) { }
 
   ngOnInit() {
   }
@@ -21,6 +22,16 @@ export class ListarPage implements OnInit {
     this.empresas =[];
     this.carregarDadosEmpresas();
    
+  }
+
+  
+  async mensagem(msg,duration,color) {
+    const toast = await this.toast.create({
+      message: msg,
+      duration: duration,
+      color: color
+    });
+    toast.present();
   }
 
   carregarDadosEmpresas(){
@@ -40,6 +51,13 @@ export class ListarPage implements OnInit {
       });
 
     })
+
+  }
+
+  excluirEmpresa(codigo){
+
+    this.mensagem("Empresa excluída com sucesso!",3000,"success");
+
 
   }
 
