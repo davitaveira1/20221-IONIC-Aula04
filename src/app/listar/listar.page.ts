@@ -56,7 +56,20 @@ export class ListarPage implements OnInit {
 
   excluirEmpresa(codigo){
 
-    this.mensagem("Empresa excluída com sucesso!",3000,"success");
+    return new Promise(resolve => {
+      let dados = {
+        acao : 'excluir',
+        codigo : codigo       
+      };
+
+      this.post.dadosApi(dados,'api.php').subscribe(data => {
+
+        this.ionViewWillEnter();
+        this.mensagem("Empresa excluída com sucesso!",3000,"success");
+
+      });
+
+    })   
 
 
   }
