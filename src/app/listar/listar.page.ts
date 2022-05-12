@@ -1,6 +1,7 @@
 import { Post } from 'src/services/post';
 import { Component, OnInit } from '@angular/core';
 import { ToastController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-listar',
@@ -12,7 +13,7 @@ export class ListarPage implements OnInit {
   empresas : any = [];
   nomeEmpresa : string ="";
 
-  constructor(private post : Post, private toast : ToastController) { }
+  constructor(private post : Post, private toast : ToastController, private route: Router) { }
 
   ngOnInit() {
   }
@@ -71,6 +72,12 @@ export class ListarPage implements OnInit {
 
     })   
 
+
+  }
+
+  editarEmpresa(codigo,nome){
+
+    this.route.navigate(['/editar-empresa/'+codigo+'/'+nome]);    
 
   }
 

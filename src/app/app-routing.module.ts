@@ -18,6 +18,10 @@ const routes: Routes = [
     path: 'listar',
     loadChildren: () => import('./listar/listar.module').then( m => m.ListarPageModule)
   },
+  {
+    path: 'editar-empresa',
+    loadChildren: () => import('./editar-empresa/editar-empresa.module').then( m => m.EditarEmpresaPageModule)
+  },
 
 ];
 
