@@ -6,4 +6,15 @@
 
 <ion-content>
 
+  <ion-item>
+
+    <ion-label>Nome:</ion-label>
+    <ion-input [(ngModel)]="nomeEmpresa"></ion-input>
+
+  </ion-item>
+
+  <ion-button expand="block" color="success" (click)="editar(codigo,nomeEmpresa)">Editar</ion-button>
+
+
+
 </ion-content>

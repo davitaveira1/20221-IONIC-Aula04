@@ -14,7 +14,8 @@ const routes: Routes = [
   {
     path: 'form',
     loadChildren: () => import('./form/form.module').then( m => m.FormPageModule)
-  },  {
+  },
+  {
     path: 'listar',
     loadChildren: () => import('./listar/listar.module').then( m => m.ListarPageModule)
   },
@@ -22,6 +23,10 @@ const routes: Routes = [
     path: 'editar-empresa',
     loadChildren: () => import('./editar-empresa/editar-empresa.module').then( m => m.EditarEmpresaPageModule)
   },
+  {
+    path: 'editar-empresa/:codigo/:nome',
+    loadChildren: () => import('./editar-empresa/editar-empresa.module').then( m => m.EditarEmpresaPageModule)
+  },  
 
 ];
 
