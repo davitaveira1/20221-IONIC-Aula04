@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Post } from 'src/services/post';
 import { Component, OnInit } from '@angular/core';
 
@@ -10,7 +11,7 @@ export class FormPage implements OnInit {
 
   nome : string;
 
-  constructor(private post : Post) { }
+  constructor(private post : Post, private route : Router) { }
 
   ngOnInit() {
   }
@@ -27,7 +28,9 @@ export class FormPage implements OnInit {
         //this.router.navigate(['/listar-produtos']);
         //this.mensagemSalvar('Produto adicionado com sucesso!');
         console.log("Dados adicionados")
+        this.route.navigate(['listar']);
         this.nome="";
+        
 
       });
 
