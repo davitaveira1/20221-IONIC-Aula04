@@ -26,7 +26,11 @@ const routes: Routes = [
   {
     path: 'editar-empresa/:codigo/:nome',
     loadChildren: () => import('./editar-empresa/editar-empresa.module').then( m => m.EditarEmpresaPageModule)
-  },  
+  },   {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+  },
+ 
 
 ];
 
