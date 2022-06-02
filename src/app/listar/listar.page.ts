@@ -1,6 +1,7 @@
+import { ListaSuspensaComponent } from './../components/lista-suspensa/lista-suspensa.component';
 import { Post } from 'src/services/post';
 import { Component, OnInit } from '@angular/core';
-import { ToastController } from '@ionic/angular';
+import { PopoverController, ToastController } from '@ionic/angular';
 import { Router } from '@angular/router';
 
 @Component({
@@ -13,7 +14,11 @@ export class ListarPage implements OnInit {
   empresas : any = [];
   nomeEmpresa : string ="";
 
-  constructor(private post : Post, private toast : ToastController, private route: Router) { }
+  constructor(
+    private post : Post, 
+    private toast : ToastController, 
+    private route: Router,
+    public popoverController: PopoverController) { }
 
   ngOnInit() {
   }
@@ -79,6 +84,18 @@ export class ListarPage implements OnInit {
 
     this.route.navigate(['/editar-empresa/'+codigo+'/'+nome]);    
 
+  }
+
+  async listaSuspensa(ev: any) {
+    const popover = await this.popoverController.create({
+      component: ListaSuspensaComponent,
+      event: ev,
+      translucent: true
+    });
+    await popover.present();
+  
+    const { role } = await popover.onDidDismiss();
+    console.log('onDidDismiss resolved with role', role);
   }
 
 }
