@@ -1,4 +1,7 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+
+
 
 @Component({
   selector: 'app-lista-suspensa',
@@ -7,8 +10,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListaSuspensaComponent implements OnInit {
 
-  constructor() { }
+  constructor(public router : Router) { }
 
   ngOnInit() {}
 
+
+  teste(){
+    this.router.navigate(['home']);
+  }
 }
